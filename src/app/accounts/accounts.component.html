@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-12">
+    <app-add-account></app-add-account>
+
+  </div>
+</div>
+Total Balance : {{balanceSum}}
+<div class="row">
+  <div class="col-md-5">
+    <app-accounts-list></app-accounts-list>
+  </div>
+  <div class="col-md-7">
+    <app-account-detail 
+    *ngIf="selectedAccount" 
+    [account]="selectedAccount" 
+    [accountDeposit]="selectedAccountDeposit"
+    [accountExpense]="selectedAccountExpense"></app-account-detail>
+  </div>
+</div>  

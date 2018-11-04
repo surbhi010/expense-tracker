@@ -1,0 +1,35 @@
+
+<div class="form-horizontal" >
+  <div class="row">
+    <div class="col-md-6">
+  <div class="form-group">
+    <div class="row">
+    <label class="control-label col-md-3" for="name">Account Name</label>
+    <div class="col-sm-9">
+      <input type="text" 
+      class="form-control" 
+      id="name" 
+      placeholder="Account Name" 
+      name="account" #accountName>
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-md-6">
+  <div class="form-group">
+      <div class="row">
+    <label class="control-label col-sm-3" for="balance">Balance</label>
+    <div class="col-sm-9">
+      <input type="text" 
+      class="form-control" 
+      id="balance" 
+      placeholder="Balance" 
+      name="credit" #accountCredit>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+  <button class="btn btn-danger float-right" type="submit" (click)="addAccountDetail()">Add Account</button>
+
+</div>

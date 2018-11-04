@@ -1,0 +1,19 @@
+<h1>{{account.name}}</h1>
+Current Balance: {{account.credit}}
+<div class="row" *ngFor="let accountD of accountDeposit">
+  <div class="col-md-8">
+    <h5 class="list-group-item-heading">Deposit to {{accountD.depositAccount}}</h5>
+  </div>
+  <div class="col-md-4">
+      
+    <p class="list-group-item-text"> {{accountD.depositAmount}}</p>
+  </div>
+</div>
+<div class="row" *ngFor="let accountE of accountExpense">
+  <div class="col-md-8">
+    <h4 class="list-group-item-heading">{{accountE.ExpenseName}}</h4>
+  </div>
+  <div class="col-md-4">
+    <p class="list-group-item-text">{{accountE.ExpenseAmount}}</p>
+  </div>
+</div>

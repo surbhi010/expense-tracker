@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+a{
+    color: black;
+}
+body{
+    background-image: url(https://userscontent2.emaze.com/images/e54eda61-d18b-4bf2-bc6c-746fb74fff9c/e9a65bd4-3f1d-40fc-9757-d0673a84438c.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

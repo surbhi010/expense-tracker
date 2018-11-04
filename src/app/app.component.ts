@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'expense-tracker';
+  selectedFeature = 'accounts';
+  onSelectedCategory(selected: string) {
+    this.selectedFeature = selected;
+  }
 }
