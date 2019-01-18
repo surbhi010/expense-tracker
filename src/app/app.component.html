@@ -1,8 +1,0 @@
-<app-header (selectedCategory)="onSelectedCategory($event)"></app-header>
-<div class="container   ">
-    <div class="jumbotron" style="margin-top: 4%;">
-        <app-accounts *ngIf="selectedFeature === 'accounts'"></app-accounts>
-        <app-expenses *ngIf="selectedFeature === 'expenses'"></app-expenses>
-        <app-deposit *ngIf="selectedFeature === 'deposit'"></app-deposit>
-    </div>
-</div>
