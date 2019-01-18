@@ -1,0 +1,14 @@
+<div class="col-sm-8">
+  <select class="form-control" #debitAccount>
+    <option *ngFor="let account of accounts" > {{ account }}</option>
+  </select>
+</div>
+<div class="col-sm-8">
+  <select class="form-control" #creditAccount>
+    <option *ngFor="let account of accounts" > {{ account }}</option>
+  </select>
+</div>
+<div class="col-sm-8">
+  <input class="form-control" type="text" name="quantity" #AmountEntered>
+</div>
+<button type="submit" class="btn btn-primary" (click)="onTransfer()">transfer</button> 

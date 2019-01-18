@@ -3,6 +3,8 @@ import { AccountService } from '../../shared/account.service';
 import { Deposit } from '../../shared/deposit.model';
 import { Expense } from '../../shared/expense.model';
 import { Account } from '../../shared/account.model';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-account-detail',
@@ -11,29 +13,35 @@ import { Account } from '../../shared/account.model';
 })
 
 export class AccountDetailComponent implements OnInit, OnChanges {
-  @Input() account: Account;
-  @Input() accountDeposit: Deposit[];
-  @Input() accountExpense: Expense[];
+  account: Account;
+  accountDeposit: Deposit[];
+  accountExpense: Expense[];
   deposits: Deposit[];
   expenses: Expense[];
-  constructor(private accountService: AccountService) { }
+  nameAccount: string;
+  abcd;
 
+  constructor(private accountService: AccountService,
+    private router: Router,
+    private route: ActivatedRoute) {
+      this.abcd = 90;
+     }
   ngOnInit() {
-    // this.deposits = this.accountService.getDeposits();
-    // this.accountService.depositChanged.subscribe(
-    //   (deposit: Deposit[]) => {
-    //     this.deposits = deposit;
-    //   }
-    // );
-    // this.expenses = this.accountService.getExpenses();
-    // this.accountService.expenseChanged.subscribe(
-    //   (expense: Expense[]) => {
-    //     this.expenses = expense;
-    //   }
-    // );
+    this.abcd = 100;
+    console.log(this.nameAccount);
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.nameAccount = params['name'];
+           this.account = this.accountService.getAccountByName(this.nameAccount);
+          // console.log('h1', this.account);
+          this.accountDeposit = this.accountService.getDepositsForAccount(this.account);
+          this.accountExpense = this.accountService.getExpenseForAccount(this.account);
+        }
+      );
   }
   ngOnChanges() {
-      console.log(1, this.accountDeposit);
+    console.log(1, this.accountDeposit);
   }
 
 }

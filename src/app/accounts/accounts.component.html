@@ -10,10 +10,6 @@ Total Balance : {{balanceSum}}
     <app-accounts-list></app-accounts-list>
   </div>
   <div class="col-md-7">
-    <app-account-detail 
-    *ngIf="selectedAccount" 
-    [account]="selectedAccount" 
-    [accountDeposit]="selectedAccountDeposit"
-    [accountExpense]="selectedAccountExpense"></app-account-detail>
+   <router-outlet></router-outlet>
   </div>
 </div>  

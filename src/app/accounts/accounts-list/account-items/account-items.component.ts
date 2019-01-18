@@ -10,20 +10,10 @@ import { Expense } from '../../../shared/expense.model';
 })
 export class AccountItemsComponent implements OnInit {
 @Input() account: Account;
-
+@Input() nameAccount;
   constructor(private accountService: AccountService) { }
   deposits: Deposit[];
   expenses: Expense[];
   ngOnInit() {
-  }
-  onAccountSelected() {
-    console.log(this.account);
-    this.deposits =  this.accountService.getDepositsForAccount(this.account);
-    this.expenses = this.accountService.getExpenseForAccount(this.account);
-    this.accountService.accountSelected.emit({
-      account: this.account,
-      deposits: this.deposits,
-      expense: this.expenses
-    });
   }
 }

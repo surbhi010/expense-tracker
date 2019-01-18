@@ -11,7 +11,6 @@ export class AccountsListComponent implements OnInit {
   account: Account[];
   constructor(private accountService: AccountService) {
   }
-
   ngOnInit() {
     this.account = this.accountService.getAccounts();
     this.accountService.accountsChanged.subscribe(
@@ -20,6 +19,5 @@ export class AccountsListComponent implements OnInit {
       }
     );
   }
-
 
 }
